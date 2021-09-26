@@ -32,7 +32,7 @@ if (isMobile.any()) {
     if (menuArrows.length > 0) {
         for (let i = 0; i < menuArrows.length; i++) {
             const menuArrow = menuArrows[i];
-            menuArrow.addEventListener('click', function(e) {
+            menuArrow.addEventListener('click', function() {
                 menuArrow.parentElement.classList.toggle('_active');
             });
         }
@@ -45,7 +45,7 @@ if (isMobile.any()) {
 const iconMenu = document.querySelector('.header_icon');
 const menuBody = document.querySelector('.header_nav');
 if (iconMenu) {
-    iconMenu.addEventListener('click', function (e) {
+    iconMenu.addEventListener('click', function () {
         document.body.classList.toggle('_lock');
         iconMenu.classList.toggle('_active');
         menuBody.classList.toggle('_active');
@@ -95,7 +95,6 @@ function onSubmitThree(event) {
     let sortedArray2 = (order === 'ascending') ? sort(numberArr, sortType, order) : sort(numberArr, sortType, order).reverse()
 
     const formThree = document.querySelector('.form_four')
-    const  formThreeContent = formThree.innerHTML
     formThree.innerHTML =
         `<div class="part_of_form_four"><label for="resultArr">Сортированый массив</label>
          <textarea id="resultArr" name="resultValue">${sortedArray2}</textarea>
@@ -304,28 +303,3 @@ function combSort(array) {
     }
     return array;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

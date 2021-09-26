@@ -1,22 +1,65 @@
+@import "static/fonts/fonts.css";
+
+
+:root{
+    /* Colors */
+
+    --color-white-1: #fff;
+    --color-white-2: #9c00be;
+
+    --color-yellow-1: #FFCC70;
+
+    --color-purple-1: #be70fd;
+    --color-purple-2: #8670fd;
+    --color-purple-3: #C850C0;
+
+    --color-blue-1: #f9f9f9;
+    --color-blue-2: darkblue;
+    --color-blue-3: #4965d6;
+    --color-blue-4: #4158D0;
+
+    --color-black-1: #444444;
+    --color-black-2: #e0e0e0;
+
+
+
+    /* Fonts */
+    --font-family-titillium-web: 'Titillium Web', sans-serif;
+    --font-color: var(--color-black-1);
+
+
+    font-size: calc(0.5em + 1vw);
+    font-family: var(--font-family-titillium-web);
+}
+
 *{
     padding: 0;
     margin: 0;
     border: 0;
+    color: var(--font-color);
 }
+
 *,*:before,*:after{
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-:focus,:active{outline: none;}
-a:focus,a:active{outline: none;}
 
-nav,footer,header,aside{display: block;}
+:focus,:active {
+    outline: none;
+}
 
-html,body{
+a:focus,a:active {
+    outline: none;
+}
+
+nav,footer,header,aside {
+    display: block;
+}
+
+html,body {
     height: 100%;
     width: 100%;
-    font-size: 100%;
     line-height: 1;
     font-size: 14px;
     -ms-text-size-adjust: 100%;
@@ -26,38 +69,46 @@ html,body{
 input,button,textarea{font-family:inherit;}
 
 input::-ms-clear{display: none;}
+
 button{cursor: pointer;}
+
 button::-moz-focus-inner {padding:0;border:0;}
+
 a, a:visited{text-decoration: none;}
+
 a:hover{text-decoration: none;}
+
 ul li{list-style: none;}
+
 img{vertical-align: top;}
 
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 
 /**********************BASIC*************************/
 
-:root{
-    /*--font: calc(0.5em + 1vw);*/
-    font-size: calc(0.5em + 1vw);
-    font-family: 'Playfair Display', serif;
-}
 input, select, button, textarea{
-    border: 1px solid black;
+    border: 2px solid var(--color-black-2);
+    margin: 10px 0;
+    padding: 8px 10px;
     font-size: 0.8em;
+    border-radius: 4px;
 }
+
 a {
-    color: black;
+    color: var(--color-white-1);
 }
+
 a:hover {
     text-decoration: underline;
 }
+
 button {
     padding: 5px;
 }
+
 button:hover {
-    background: antiquewhite;
-    flood-color: darkblue;
+    background: var(--color-white-2);
+    flood-color: var(--color-blue-2);
 }
 
 /**********************HEADER*************************/
@@ -67,61 +118,82 @@ button:hover {
     left: 0;
     width: 100%;
     z-index: 10;
-    background-color: antiquewhite;
+    background-color: var(--color-blue-4);
+    background-image: linear-gradient(43deg, var(--color-blue-4) 0%, var(--color-purple-3) 46%, var(--color-yellow-1) 100%);
 }
+
 .header_wrapper {
-    max-width: 1200px;
     margin: 0 auto;
 }
+
 /**********************HEADER-UP*************************/
 .header_upper {
     display: flex;
     align-items: center;
     min-height: 70px;
+    user-select: none;
 }
+
 .header_img {
-    flex-grow: 1;
+    display: block;
+    margin: 0 25px;
+    flex: 0 0 auto;
+    max-width: 70px;
+    min-width: 70px;
     z-index: 5;
 }
+
+
 .header_title {
-    flex-grow: 2;
+    font-size: 2.4em;
+    transition: font-size 0.2s linear;
+    color: var(--color-white-1);
     z-index: 5;
 }
-.header_title > p {
-    font-size: 3em;
-    /*font-size: var(--font);*/
-}
+
 .header_icon {
     display: none;
 }
 /**********************HEADER-DOWN*************************/
 .header_nav {
-    background: linear-gradient(to bottom, lightblue, antiquewhite);
+    background: linear-gradient(249deg, var(--color-purple-1), var(--color-purple-2), var(--color-blue-3));
+    background-size: 600% 600%;
+
+    -webkit-animation: GayFlower 15s ease infinite;
+    -moz-animation: GayFlower 15s ease infinite;
+    animation: GayFlower 15s ease infinite;
 }
+
 .header_menu > li {
     position: relative;
 }
+
 .menu_item {
-    font-size: 2em;
+    font-size: 1.5em;
 }
+
 .menu_sub-list {
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: black;
+    background-color: var(--color-black-1);
     padding: 15px;
     min-width: 200px;
 }
+
 .menu_sub-list > li {
     padding: 5px 0;
 }
+
 .menu_sub-list li:last-child {
     padding: 5px 0 0 0;
 }
+
 .menu_sub-link {
-    color: white;
+    color: var(--color-white-1);
     font-size: 1.5em;
 }
+
 .menu_arrow {
     display: none;
 }
@@ -129,16 +201,19 @@ button:hover {
 body._lock {
     overflow: hidden;
 }
+
 body._pc .header_menu > li:hover .menu_sub-list {
     opacity: 1;
     visibility: visible;
     transform: translate(0, 0);
     pointer-events: all;
 }
+
 body._touch .header_menu > li {
     display: flex;
     align-items: center;
 }
+
 body._touch .menu_arrow {
     display: block;
     width: 0;
@@ -147,8 +222,9 @@ body._touch .menu_arrow {
     transition: transform 0.3s ease 0s;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-top: 20px solid #fff;
+    border-top: 20px solid var(--color-white-1);
 }
+
 body._touch .header_menu > li._active .menu_sub-list {
     opacity: 1;
     visibility: visible;
@@ -156,6 +232,7 @@ body._touch .header_menu > li._active .menu_sub-list {
     pointer-events: all;
     display: block;
 }
+
 body._touch .header_menu > li._active .menu_arrow {
     transform: rotate(-180deg);
 }
@@ -166,12 +243,12 @@ body._touch .header_menu > li._active .menu_arrow {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        border-bottom: 1px solid black;
-        border-top: 1px solid black;
     }
+
     .header_menu > li {
         padding: 10px 0;
     }
+
     .menu_sub-list {
         transform: translate(0, 10%);
         transition: all 0.3s ease 0s;
@@ -180,19 +257,39 @@ body._touch .header_menu > li._active .menu_arrow {
         pointer-events: none;
     }
 }
+
 @media (max-width: 767px) {
     /*--------ВЕРХНЯЯ ЧАСТЬ ХЕДЕРА-------*/
+
+    .header_upper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 70px;
+        user-select: none;
+    }
+
+    .header_title {
+        font-size: 1.5em;
+        transition: font-size 0.2s linear;
+        color: var(--color-white-1);
+    }
+
     /*--------ИКОНКА-------*/
     .header_icon {
+        flex: 0 0 auto;
+        justify-self: flex-end;
         display: block;
-        flex-grow: 1;
         position: relative;
-        width: 25px;
-        height: 20px;
+        max-width: 25px;
+        min-width: 25px;
+        max-height: 20px;
+        min-height: 20px;
         cursor: pointer;
-        margin-right: 10px;
+        margin: 0 25px;
         z-index: 5;
     }
+
     .header_icon span,
     .header_icon::before,
     .header_icon::after {
@@ -200,30 +297,37 @@ body._touch .header_menu > li._active .menu_arrow {
         left: 0;
         height: 15%;
         width: 100%;
-        background-color: black;
+        background-color: var(--color-white-1);
         transition: all 0.3s ease 0s;
     }
+
     .header_icon::before,
     .header_icon::after {
         content: '';
     }
+
     .header_icon::before {
         top: 0;
     }
+
     .header_icon::after {
         bottom: 0;
     }
+
     .header_icon span {
         top: 50%;
         transform: scale(1) translate(0, -50%);;
     }
+
     .header_icon._active span {
         transform: scale(0) translate(0, -50%);
     }
+
     .header_icon._active::before {
         top: 50%;
         transform: rotate(-45deg) translate(0, -50%);
     }
+
     .header_icon._active::after {
         bottom: 50%;
         transform: rotate(45deg) translate(0, 50%);
@@ -238,10 +342,18 @@ body._touch .header_menu > li._active .menu_arrow {
         padding: 100px 30px 30px 30px;
         overflow: auto;
         transition: left 0.3s ease 0s;
+        background: linear-gradient(249deg, var(--color-purple-1), var(--color-purple-2), var(--color-blue-3));
+        background-size: 600% 600%;
+
+        -webkit-animation: GayFlower 15s ease infinite;
+        -moz-animation: GayFlower 15s ease infinite;
+        animation: GayFlower 15s ease infinite;
     }
+
     .header_nav._active {
         left: 0;
     }
+
     .header_nav::before {
         content: '';
         position: fixed;
@@ -249,18 +361,22 @@ body._touch .header_menu > li._active .menu_arrow {
         height: 70px;
         top: 0;
         left: 0;
-        background-color: antiquewhite;
+        background-color: var(--color-blue-4);
+        background-image: linear-gradient(43deg, var(--color-blue-4) 0%, var(--color-purple-3) 46%, var(--color-yellow-1) 100%);
         z-index: 2;
     }
+
     .header_menu > li {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
         margin: 0 0 50px 0;
     }
+
     .header_menu > li._active .menu_sub-list {
         display: block;
     }
+
     .menu_sub-list {
         background: rgba(0, 0, 0, 0.8);
         position: relative;
@@ -269,31 +385,30 @@ body._touch .header_menu > li._active .menu_arrow {
         display: none;
     }
 }
+
+
 /**********************MAIN*************************/
 
-
-
-
-
-.main_wrapper {
-    padding: 120px 10px 0 10px;
-    max-width: 1200px;
-    margin: 0 auto;
-    background: lightblue;
-    font-size: 1.5em;
-}
 .main_wrapper {
     display: grid;
-   grid-template-areas: "one four"
+    grid-template-areas: "one four"
                          "two four"
                          "three four";
 
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: 1fr 1fr;
+
+    padding: 130px 25px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--color-blue-1);
+    font-size: 1.5em;
 }
+
 .form_one {
     grid-area: one;
 }
+
 .form_two {
     grid-area: two;
 }
@@ -302,40 +417,44 @@ textarea {
     width: 300px;
     height: 100px;
 }
+
 .form_three {
     grid-area: three;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
 }
+
 .form_four {
     grid-area: four;
     margin: auto;
 }
+
 .part_of_form_four {
     display: grid;
 }
+
 .form_el {
     padding: 5px;
 }
 
 
 
+/* Animations */
+@-webkit-keyframes GayFlower {
+    0%{ background-position: 0 64% }
+    50%{ background-position: 100% 37% }
+    100%{ background-position: 0 64% }
+}
 
+@-moz-keyframes GayFlower {
+    0%{ background-position: 0 64% }
+    50%{ background-position: 100% 37% }
+    100%{ background-position: 0 64% }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@keyframes GayFlower {
+    0%{ background-position: 0 64% }
+    50%{ background-position: 100% 37% }
+    100%{ background-position: 0 64% }
+}
