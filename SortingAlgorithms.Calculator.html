@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="SortingAlgorithms.Calculator.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+
+    <header class="header">
+        <div class="header_wrapper">
+            <div class="header_upper">
+                <div class="header_img"><img src="images/icon.png" alt="img"></div>
+                <div class="header_title">
+                    <p>Calculator of Sorting Algorithms</p>
+                </div>
+                <div class="header_icon">
+                    <span></span>
+                </div>
+            </div>
+            <nav class="header_nav">
+                <ul class="header_menu">
+                    <li><a href="#" class="menu_item">Main page</a></li>
+                    <li><a href="#" class="menu_item">Calculator</a></li>
+                    <li>
+                        <a href="#" class="menu_item">About organization</a>
+                        <span class="menu_arrow"></span>
+                        <ul class="menu_sub-list">
+                            <li>
+                                <a href="" class="menu_sub-link">Contacts</a>
+                            </li>
+                            <li>
+                                <a href="" class="menu_sub-link">Staff</a>
+                            </li>
+                            <li>
+                                <a href="" class="menu_sub-link">Projects</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="menu_item">Types of Algorithms</a></li>
+                    <li><a href="#" class="menu_item">Notes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="main_wrapper">
+            <form onsubmit="onSubmitOne(event, this)" class="form_el form_one">
+                <p>
+                    Создать массив псевдослучайных чисел от
+                    <input required
+                           type="tel"
+                           value="0"
+                           name="minValue"
+                           autocomplete="off"/>
+                     до
+                    <input required
+                           type="tel"
+                           value="10"
+                           name="maxValue"
+                           autocomplete="off"/>
+                </p>
+                <button type="submit">Generate</button>
+                <button type="reset">Clear</button>
+            </form>
+            <form  class="form_el form_two">
+                    <label for="initArr">Изначальный массив</label>
+                    <br/>
+                    <textarea id="initArr" name="mixedValue"></textarea>
+                    <br/>
+                    <button type="reset">Clear</button>
+            </form>
+            <form onsubmit="onSubmitThree(event, this)" class="form_el form_three">
+                <div class="part of_form_one">
+                    <p>Порядок</p>
+
+                    <label>
+                        <input type="radio"
+                               id="order"
+                               name="order"
+                               value="descending" />
+                        По убыванию
+                    </label><br />
+
+                    <label>
+                        <input type="radio"
+                               name="order"
+                               value="ascending" />
+                        По возрастанию
+                    </label>
+                </div>
+                <div class="part of_form_two">
+                    <label for="algorithm">Алгоритм:</label>
+                    <select id="algorithm" name="algorithm">
+                        <option id="sort-1" value="InsertionSort" name="sortType">1) Insertion sort</option>
+                        <option id="sort-2" value="SelectionSort" name="sortType">2) Selection sort</option>
+                        <option id="sort-3" value="MergeSort" name="sortType">3) Merge sort</option>
+                        <option id="sort-4" value="Heapsort" name="sortType">4) Heapsort</option>
+                        <option id="sort-5" value="Quicksort" name="sortType">5) Quicksort</option>
+                        <option id="sort-6" value="BubbleSort" name="sortType">6) Bubble sort</option>
+                        <option id="sort-7" value="Shellsort" name="sortType">7) Shellsort</option>
+                        <option id="sort-8" value="CombSort" name="sortType">8) Comb sort</option>
+                        <option id="sort-9" value="CountingSort" name="sortType">9) Counting sort</option>
+                        <option id="sort-10" value="BucketSort" name="sortType">10) Bucket sort</option>
+                        <option id="sort-11" value="RadixSort" name="sortType">11) Radix sort</option>
+                        <option id="sort-12" value="TreeSort" name="sortType">12) Tree sort</option>
+                        <option id="sort-13" value="Bogosort" name="sortType">13) Bogosort</option>
+                    </select>
+                </div>
+                <div class="part of_form_three">
+                        <button type="submit">Sort</button>
+                </div>
+            </form>
+            <div class="form_el form_four">
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+</div>
+</body>
+<script src="SortingAlgorithms.Calculator.js"></script>
+</html>
